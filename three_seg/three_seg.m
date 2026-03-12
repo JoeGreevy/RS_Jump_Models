@@ -1,0 +1,75 @@
+import org.opensim.modeling.*
+
+model = Model();
+model.setUseVisualizer(true);
+
+%%% 3 Segment Bodies
+ground = model.getGround();
+foot = Body('foot', 1, Vec3(0), Inertia(0.133));
+shank = Body('shank', 1, Vec3(0), Inertia(0.133));
+thigh = Body('thigh', 1, Vec3(0), Inertia(0.133));
+
+%%% 3 Segment Joints
+hip = FreeJoint('hip', ground, Vec3(0, 0, 0), Vec3(0), thigh, Vec3(0, 0.5, 0), Vec3(0));
+knee = PinJoint('knee', thigh, Vec3(0, -0.5, 0), Vec3(0), shank, Vec3(0, 0.5, 0), Vec3(0));
+ankle = PinJoint('ankle', shank, Vec3(0, -0.5, 0), Vec3(0), foot, Vec3(0, 0.2, 0), Vec3(0));
+
+% Cylinder and Foot Geometry
+cyl = Cylinder(0.025, 0.5); cyl.setColor(Vec3(0, 1, 0));
+foot_geom = Cylinder(0.02, 0.2); foot_geom.setColor(Vec3(0, 1, 0));
+% Thigh Shank and Foot offset frames
+th_hip = PhysicalOffsetFrame("th_hip", thigh, Transform(Vec3(0, 0, 0)));
+shank_off = PhysicalOffsetFrame("shank_off", shank, Transform(Vec3(0, 0, 0)));
+foot_off = PhysicalOffsetFrame("foot_off", foot, Transform(Vec3(0, 0, 0)));
+% Add Component and attach Geometry
+thigh.addComponent(th_hip); th_hip.attachGeometry(cyl.clone())
+shank.addComponent(shank_off); shank_off.attachGeometry(cyl.clone())
+foot.addComponent(foot_off); foot_off.attachGeometry(foot_geom.clone())
+
+% Sphere Geometry
+ball_geom = Sphere(0.05); ball_geom.setColor(Vec3(0, 0, 1));
+% Attach ball geometry to hip joint
+hip_frame = hip.get_frames(1); hip_frame.attachGeometry(ball_geom.clone())
+knee_frame = knee.get_frames(1); knee_frame.attachGeometry(ball_geom.clone());
+ankle_frame = ankle.get_frames(1); ankle_frame.attachGeometry(ball_geom.clone());
+
+
+%%% Assemble the model 
+model.addBody(thigh); model.addBody(shank); model.addBody(foot);
+model.addJoint(hip); model.addJoint(knee); model.addJoint(ankle);
+
+coord_set = model.getCoordinateSet();
+% Printing coordinate names
+% for i = 0:coord_set.getSize()-1
+%     disp(coord_set.get(i).getName())
+% end
+% x rotation and y rotation clamped
+
+% % z rotation
+%coord_set.get("hip_coord_2").setDefaultValue(pi/6);
+% % x and y translation
+% coord_set.get("hip_coord_3").setDefaultValue(0); coord_set.get("hip_coord_4").setDefaultValue(0);
+coord_set.get("hip_coord_4").setDefaultValue(6);
+% 
+% coord_set.get("hip_coord_3").set_clamped(1); 
+% coord_set.get("hip_coord_4").set_clamped(1); 
+% coord_set.get("hip_coord_5").set_clamped(1);
+
+coord_set.get("ankle_coord_0").setDefaultValue(pi/4)
+
+
+%%% Run forward simulation using Manager
+state = model.initSystem();
+
+
+model.print("three_seg.osim")
+coord_set.get("hip_coord_3").setLocked(state, 1);
+coord_set.get("hip_coord_4").setLocked(state, 1);
+coord_set.get("hip_coord_5").setLocked(state, 1);
+% coord_set.get("hip_coord_3").setLocked(state, 1);
+% coord_set.get("hip_coord_4").setLocked(state, 1);
+% coord_set.get("hip_coord_5").setLocked(state, 1);
+
+manager = Manager(model);
+manager.initialize(state);
+manager.integrate(3);
