@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <OpenSimDocument Version="40500">
 	<Model name="model">
+		<!--List of components that this component owns and serializes.-->
+		<components>
+			<TableReporter__double_ name="reporter">
+				<!--The recording time interval (s). If interval == 0, defaults toevery valid integration time step.-->
+				<report_time_interval>0.0050000000000000001</report_time_interval>
+				<!--Paths to outputs (channels) to satisfy the list Input 'inputs' of type InputT (description: Variable list of quantities to be reported.). To specify multiple paths, put spaces between them.-->
+				<input_inputs>/jointset/hip/hip_coord_0|value(hip_coord_0) /jointset/hip/hip_coord_1|value(hip_coord_1) /jointset/hip/hip_coord_2|value(hip_coord_2) /jointset/hip/hip_coord_3|value(hip_coord_3) /jointset/hip/hip_coord_4|value(hip_coord_4) /jointset/hip/hip_coord_5|value(hip_coord_5) /jointset/knee/knee_coord_0|value(knee_coord_0) /jointset/ankle/ankle_coord_0|value(ankle_coord_0)</input_inputs>
+			</TableReporter__double_>
+		</components>
 		<!--The model's ground reference frame.-->
 		<Ground name="ground">
 			<!--The geometry used to display the axes of this Frame.-->

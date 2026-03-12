@@ -1,5 +1,6 @@
 import org.opensim.modeling.*
 
+
 model = Model();
 model.setUseVisualizer(true);
 
@@ -38,13 +39,13 @@ ankle_frame = ankle.get_frames(1); ankle_frame.attachGeometry(ball_geom.clone())
 model.addBody(thigh); model.addBody(shank); model.addBody(foot);
 model.addJoint(hip); model.addJoint(knee); model.addJoint(ankle);
 
+%%% Working with coordinates
 coord_set = model.getCoordinateSet();
-% Printing coordinate names
+%%% Printing coordinate names
 % for i = 0:coord_set.getSize()-1
 %     disp(coord_set.get(i).getName())
 % end
 % x rotation and y rotation clamped
-
 % % z rotation
 %coord_set.get("hip_coord_2").setDefaultValue(pi/6);
 % % x and y translation
@@ -54,8 +55,17 @@ coord_set.get("hip_coord_4").setDefaultValue(6);
 % coord_set.get("hip_coord_3").set_clamped(1); 
 % coord_set.get("hip_coord_4").set_clamped(1); 
 % coord_set.get("hip_coord_5").set_clamped(1);
-
 coord_set.get("ankle_coord_0").setDefaultValue(pi/4)
+
+%%% Angle Reporter
+angReporter = TableReporter();
+angReporter.set_report_time_interval(1/200);
+for i = 0:coord_set.getSize()-1
+    coord = coord_set.get(i);
+    angReporter.addToReport(coord.getOutput("value"), coord.getName());
+end
+%angReporter.addToReport(model.getCoordinateSet().get(1), "shank_ang");
+model.addComponent(angReporter);
 
 
 %%% Run forward simulation using Manager
@@ -73,3 +83,10 @@ coord_set.get("hip_coord_5").setLocked(state, 1);
 manager = Manager(model);
 manager.initialize(state);
 manager.integrate(3);
+
+filename = "three_seg_angs.sto";
+filepath = fullfile("data", filename);
+angleTable = angReporter.getTable();
+angleTable.addTableMetaDataString('DataRate', num2str(1/200));
+STOFileAdapter.write(angleTable, filepath);
+fprintf('Angle Data written to %s \n', filepath);
