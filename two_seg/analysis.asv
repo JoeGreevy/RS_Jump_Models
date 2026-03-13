@@ -2,13 +2,13 @@ import org.opensim.modeling.*
 
 %%
 %%%%%%%%%%%%%%
-% Taking in the wild traj IK result and comparing it to 
+% Tak
 %%%%%%%%%%%%%%%
 sto = Storage("data/wild_traj_ik_results.mot");
 input = Storage("data/wild_traj.sto");
 sto.compareColumnRMS(input, "hip_coord_0", 0)
 
-hc_sto = ArrayDouble(); hc_input = ArrayDouble();
+hc_sto = ArrayDouble(); hc_input = ArrayDouble;
 sto.getDataColumn("hip_coord_0", hc_sto);
 input.getDataColumn("hip_coord_0", hc_input)
 hc_sto = hc_sto.getAsVector().getAsMat();

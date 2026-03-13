@@ -1,0 +1,3 @@
+import org.opensim.modeling.*
+
+model = Model("three_seg.m");

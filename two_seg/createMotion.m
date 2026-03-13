@@ -1,8 +1,8 @@
 import org.opensim.modeling.*
 addpath("../utils")
-
+t = 0:1/200:3;
 data = struct;
-data.time = 0:1/200:3;
+data.time = t;
 data.hip_coord_0 = pi/3*sin(2*pi*t)';
 data.knee_coord_0 = pi/6*sin(4*pi*t)';
 

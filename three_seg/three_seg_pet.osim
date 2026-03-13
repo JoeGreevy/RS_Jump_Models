@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <OpenSimDocument Version="40500">
-	<Model name="3_seg_2d">
+	<Model name="model">
 		<!--List of components that this component owns and serializes.-->
 		<components>
 			<TableReporter__double_ name="reporter">
 				<!--The recording time interval (s). If interval == 0, defaults toevery valid integration time step.-->
 				<report_time_interval>0.0050000000000000001</report_time_interval>
 				<!--Paths to outputs (channels) to satisfy the list Input 'inputs' of type InputT (description: Variable list of quantities to be reported.). To specify multiple paths, put spaces between them.-->
-				<input_inputs>/jointset/hip/hip_flex|value(hip_flex) /jointset/hip/tx|value(tx) /jointset/hip/ty|value(ty) /jointset/hip/tz|value(tz) /jointset/knee/knee_ext|value(knee_ext) /jointset/ankle/ankle_flex|value(ankle_flex)</input_inputs>
+				<input_inputs>/jointset/hip/hip_flex|value(hip_flex) /jointset/hip/tx|value(tx) /jointset/hip/ty|value(ty) /jointset/hip/tz|value(tz) /jointset/knee/knee_flex|value(knee_flex) /jointset/ankle/ankle_flex|value(ankle_flex)</input_inputs>
 			</TableReporter__double_>
 		</components>
 		<!--The model's ground reference frame.-->
@@ -63,7 +63,9 @@
 						<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
 						<socket_frame>..</socket_frame>
 						<!--Scale factors in X, Y, Z directions respectively.-->
-						<scale_factors>0.20000000000000001 0.20000000000000001 0.20000000000000001</scale_factors>
+						<scale_factors>0.5 1 0.5</scale_factors>
+						<!--The radius of the arrow-shaft used to display the frame.-->
+						<display_radius>0.10000000000000001</display_radius>
 					</FrameGeometry>
 					<!--The mass of the body (kg)-->
 					<mass>1</mass>
@@ -316,7 +318,7 @@
 					<socket_child_frame>shank_offset</socket_child_frame>
 					<!--List containing the generalized coordinates (q's) that parameterize this joint.-->
 					<coordinates>
-						<Coordinate name="knee_ext">
+						<Coordinate name="knee_flex">
 							<!--All properties of this object have their default values.-->
 						</Coordinate>
 					</coordinates>
@@ -441,35 +443,5 @@
 			<objects />
 			<groups />
 		</ForceSet>
-		<!--Markers in the model.-->
-		<MarkerSet name="markerset">
-			<objects>
-				<Marker name="gt">
-					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
-					<socket_parent_frame>/bodyset/thigh</socket_parent_frame>
-					<!--The fixed location of the station expressed in its parent frame.-->
-					<location>0 0.45000000000000001 0.20000000000000001</location>
-				</Marker>
-				<Marker name="lfe">
-					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
-					<socket_parent_frame>/bodyset/thigh</socket_parent_frame>
-					<!--The fixed location of the station expressed in its parent frame.-->
-					<location>0 -0.45000000000000001 0.10000000000000001</location>
-				</Marker>
-				<Marker name="lm">
-					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
-					<socket_parent_frame>/bodyset/shank</socket_parent_frame>
-					<!--The fixed location of the station expressed in its parent frame.-->
-					<location>0 -0.45000000000000001 0.10000000000000001</location>
-				</Marker>
-				<Marker name="toe">
-					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
-					<socket_parent_frame>/bodyset/foot</socket_parent_frame>
-					<!--The fixed location of the station expressed in its parent frame.-->
-					<location>0.017374222114043623 -0.12481522614333039 0.083360758620634579</location>
-				</Marker>
-			</objects>
-			<groups />
-		</MarkerSet>
 	</Model>
 </OpenSimDocument>

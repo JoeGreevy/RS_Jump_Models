@@ -1,19 +1,22 @@
 import org.opensim.modeling.*
 
 %%%%%%%%%
+%%% 
 %%% Get the markers from a trajectory 
 %%%%%%%%%
 
-model = Model('two_seg.osim');
+model = Model('three_seg.osim');
 model.setUseVisualizer(true);
 state = model.initSystem();
 
-table = TimeSeriesTable("data/wild_traj.sto");
+table = TimeSeriesTable("data/traj.sto");
 coords = model.getCoordinateSet();
 labels = table.getColumnLabels();
 time = table.getIndependentColumn();
 
 viz = model.updVisualizer().updSimbodyVisualizer();
+
+markerSet = model.getMarkerSet();
 
 marker_locs = struct;
 marker_locs.time = [];
@@ -35,7 +38,7 @@ for i = 0:table.getNumRows()-1
     model.realizePosition(state);
     
     % Access marker positions
-    markerSet = model.getMarkerSet();
+    
     for m = 0:markerSet.getSize()-1
         marker = markerSet.get(m);
         pos = marker.getLocationInGround(state);  % Vec3
@@ -45,7 +48,7 @@ for i = 0:table.getNumRows()-1
     marker_locs.time = [marker_locs.time; time.get(i)];
 
 
-    viz.report(state);
+    %viz.report(state);
 
 end
 
@@ -54,4 +57,4 @@ marker_locs_table = osimTableFromStruct(marker_locs);
 trc = TRCFileAdapter();
 marker_locs_table.addTableMetaDataString('DataRate', num2str(1/200))
 marker_locs_table.addTableMetaDataString('Units', 'm');
-trc.write(marker_locs_table, "data/wildTraj.trc")
+trc.write(marker_locs_table, "data/traj.trc")

@@ -1,5 +1,5 @@
 import org.opensim.modeling.*
-addpath("../utils/")
+
 
 model = Model();
 model.setName("3_seg_2d");
@@ -42,10 +42,10 @@ ankle_frame = ankle.get_frames(1); ankle_frame.attachGeometry(ball_geom.clone())
 
 %%% Markers
 markers = [];
-if exist(model.getName().toCharArray' + "_man_scale.osim", "file")
-    fprintf("Populating with manually positioned markers")
+if exist(model.name + "_man_scale.osim", "file")
+    print("Populating with manually positioned markers")
 else
-    fprintf("Positioning markers blindly.")
+    print("Positioning markers ")
     markers = [markers, Marker("gt", thigh, Vec3(0, 0.45, 0.2));
         Marker("lfe", thigh, Vec3(0, -0.45, 0.1)); Marker("lm", shank, Vec3(0, -0.45, 0.1));
         Marker("toe", foot, Vec3(0.1, 0, 0))];
