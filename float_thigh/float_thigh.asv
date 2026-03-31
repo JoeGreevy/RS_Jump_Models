@@ -1,0 +1,41 @@
+import org.opensim.modeling.*
+addpath("../utils/")
+
+model = Model();
+model.setName("float_thigh");
+model.setUseVisualizer(true);
+
+%%% 1 Segment Body
+ground = model.getGround();
+thigh = Body('thigh', 1, Vec3(0), Inertia(0.133));
+
+%%% 1 Joint - 4 Degrees of Freedom
+st = four_dof();
+hip = CustomJoint('hip', ground, Vec3(0, 3, 0), Vec3(0), thigh, Vec3(0, 0.5, 0), Vec3(0), st);
+
+%%% Define Geometry
+% Cylinder Geometry
+cyl = Cylinder(0.025, 0.5); cyl.setColor(Vec3(0, 1, 0));
+%%% Ball Geom
+ball_geom = Sphere(0.05); ball_geom.setColor(Vec3(0, 0, 1));
+% Attach Geometry
+thigh_offset = PhysicalOffsetFrame("thigh", thigh, Transform(Vec3(0, 0, 0)));
+thigh.addComponent(th_offset); thigh_offset.attachGeometry(cyl.clone());
+hip_frame = hip.get_frames(1); hip_frame.attachGeometry(ball_geom.clone());
+
+%%% Markers
+markers = [];
+if exist(model.getName().toCharArray' + "_man_scale.osim", "file")
+    fprintf("Populating with manually positioned markers")
+else
+    fprintf("Positioning markers blindly.")
+    markers = [markers, Marker("gt", thigh, Vec3(0, 0.45, 0.2));
+        Marker("lfe", thigh, Vec3(0, -0.45, 0.1))];
+end
+
+%%% Assemble the model
+model.addBody(thigh);
+model.addJoint(hip);
+for midx = 1:length(markers):
+    model.addMarker(markers(midx))
+end

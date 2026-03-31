@@ -5,7 +5,7 @@
 %%%%%%
 import org.opensim.modeling.*
 % adapting from C3D export
-filename = "30";
+filename = "weight";
 c3d = osimC3D("data/"+ filename +".c3d", 0);
 
 nTraj = c3d.getNumTrajectories;
@@ -19,19 +19,27 @@ c3d.convertMillimeters2Meters();
 markerTable = c3d.getTable_markers();
 forceTable = c3d.getTable_forces();
 [markerStruct, forceStruct] = c3d.getAsStructs;
-%%
-% col_labels_java = markerTable.getColumnLabels();
-% col_labels = [];
-% for idx = 0:nTraj-1
-%     cl = col_labels_java.get(idx).toString.toCharArray';
-%     col_labels = [col_labels; string(cl)];
-% end
-%%
-trimmedStruct = struct("time", markerStruct.time, ...
-    "gt", markerStruct.V_R_GreaterTrochanter, ...
-    "lfe", markerStruct.V_R_LateralFemoralEpicondyle, ...
-    "lm", markerStruct.V_R_LateralMalleolus, ...
-    "toe", markerStruct.R_5MT);
+
+% 30/03/26
+% Select more markers
+model_to_mocap = struct( ...
+    "gt", "V_R_GreaterTrochanter", ...
+    "lfe", "V_R_LateralFemoralEpicondyle", ...
+    "mfe", "V_R_MedialFemoralEpicondyle", ...
+    "lm", "V_R_LateralMalleolus", ...
+    "mm", "V_R_MedialMalleolus", ...
+    "toe", "R_5MT", ...
+    "instep", "R_InStep");
+
+osim_names = fieldnames(model_to_mocap);
+
+%%% 26/03/26
+%%% Remove the first data point as it tends to be NaN
+trimmedStruct = struct("time", markerStruct.time(2:end));
+for fn = 1:length(osim_names)
+    key = osim_names{fn};
+    trimmedStruct.(key) = markerStruct.(model_to_mocap.(key))(2:end, :);
+end
 
 marker_locs_table = osimTableFromStruct(trimmedStruct);
 

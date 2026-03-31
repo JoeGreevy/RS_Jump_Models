@@ -1,3 +1,10 @@
+%%%%%%%%%%%%%%%
+%%% 12/03/26 - 30/03/26 
+%%% Creating the 3 segment model.
+%%%%%%%%%%%%%%%
+
+
+
 import org.opensim.modeling.*
 addpath("../utils/")
 
@@ -46,14 +53,14 @@ if exist(model.getName().toCharArray' + "_man_scale.osim", "file")
     fprintf("Populating with manually positioned markers")
 else
     fprintf("Positioning markers blindly.")
-    markers = [markers, Marker("gt", thigh, Vec3(0, 0.45, 0.2));
-        Marker("lfe", thigh, Vec3(0, -0.45, 0.1)); Marker("lm", shank, Vec3(0, -0.45, 0.1));
-        Marker("toe", foot, Vec3(0.1, 0, 0))];
+    % From Rajajapol = Femoral Epicondyles, Malleoli, 5MT
+    % Adjusted Markers = gt, instep
+    markers = [markers, ... 
+        Marker("gt", thigh, Vec3(-0.01, -0.03, 0.07)); % by visual inspection in opensim
+        Marker("lfe", thigh, Vec3(0, -0.4, 0.05)); Marker("mfe", thigh, Vec3(0, -0.4, -0.05));
+        Marker("lm", shank, Vec3(-0.01, -0.39, 0.05)); Marker("mm", shank, Vec3(0.01, -0.39, -0.04));
+        Marker("toe", foot, Vec3(0.01, -0.01, 0.08)); Marker("instep", foot, Vec3(0.14, -0.04, 0.04))];
 end
-markers = [markers, Marker("gt", thigh, Vec3(0, 0.45, 0.2));
-        Marker("lfe", thigh, Vec3(0, -0.45, 0.1)); Marker("lm", shank, Vec3(0, -0.45, 0.1));
-        Marker("toe", foot, Vec3(0.1, 0, 0))];
-
 
 %%% Assemble the model 
 model.addBody(thigh); model.addBody(shank); model.addBody(foot);
