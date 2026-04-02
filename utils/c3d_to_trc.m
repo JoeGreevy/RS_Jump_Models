@@ -1,0 +1,24 @@
+function [markerStruct, forceStruct] = c3d_to_trc(file, location)
+    import org.opensim.modeling.*
+    % adapting from C3D export;
+    c3d = osimC3D(fullfile(location, file), 0);
+    name = extractBefore(file, ".trc");
+    
+    nTraj = c3d.getNumTrajectories;
+    t0 = c3d.getStartTime();
+    tn = c3d.getEndTime();
+    
+    c3d.rotateData('x',-90);
+    
+    c3d.convertMillimeters2Meters();
+    
+    markerTable = c3d.getTable_markers();
+    forceTable = c3d.getTable_forces();
+    [markerStruct, forceStruct] = c3d.getAsStructs;
+    
+    marker_locs_table = osimTableFromStruct(markerStruct);
+    
+    trc = TRCFileAdapter();
+    marker_locs_table.addTableMetaDataString('DataRate', num2str(1/200))
+    marker_locs_table.addTableMetaDataString('Units', 'm');
+    trc.write(marker_locs_table, fullfile(location,  join([name, ".trc"])))

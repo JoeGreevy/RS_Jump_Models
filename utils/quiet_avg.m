@@ -1,4 +1,4 @@
-function [avg, dev, ind] = quiet_avg(x, winsize, stride)
+function [best_mean, best_std, best_idx] = quiet_avg(x, winsize, stride)
 %QUIET_AVG Summary of this function goes here
 %   Detailed explanation goes here
 arguments (Input)
@@ -8,25 +8,31 @@ arguments (Input)
 end
 
 arguments (Output)
-    avg
-    dev
-    ind
+    best_mean
+    best_std
+    best_idx
 end
 n = length(x);
 num_windows = floor((n - winsize) / stride) + 1;
-win_stds  = zeros(1, num_windows);
-win_means = zeros(1, num_windows);
+best_mean = NaN;
+best_std  = Inf;
+best_idx  = NaN;
+starts = 1:stride:length(x)-winsize+1;
 
-for i = 1:num_windows
-    start_idx = (i - 1) * stride + 1;
-    end_idx   = start_idx + winsize - 1;
-    window    = x(start_idx:end_idx);
+for i = starts
+    win    = x(i:i+winsize-1);
 
-    win_stds(i)  = std(window);
-    win_means(i) = mean(window);
+    if sum(isnan(win)) > 0.5 * winsize
+        continue  % skip windows with too many NaNs
+    end
+
+    win_std = std(win, 0, 'omitnan');  % flag 0 = normalise by N-1
+    if win_std < best_std
+        best_std  = win_std;
+        best_mean = mean(win, 'omitnan');
+        best_idx  = i;
+    end
 end
-[dev, ind] = min(win_stds);
-avg      = win_means(ind);
-% be careful with the matlab index
+
 
 end
