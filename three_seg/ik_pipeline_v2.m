@@ -5,11 +5,12 @@
 %%%%%%%%%%%%%%%%
 import org.opensim.modeling.*
 addpath("../utils")
+subj = "SN602";
+hjc_method = "func";
 
 % ==== Path ==== %
 subPath = fullfile("..", "..", "..", "..", "..", "..", "OneDrive - University College Dublin/", ...
     "Modules", "Project", "code", "RS_jump", "data", "sets");
-subj = "SN602";
 ik_file = "30";
 dates = {dir(fullfile(subPath, subj)).name};
 date = dates{end}; % one and only date in most cases.
@@ -17,12 +18,22 @@ date = dates{end}; % one and only date in most cases.
 trialDir = fullfile(subPath, subj, date);
 calPath = fullfile(trialDir, "weight.c3d");
 md_c3d_path = fullfile(trialDir, ik_file+".c3d");
-
-% ==== Get Scale Parameters ==== %
 % Get the marker struct for the weight acquisition.
 [calMarkerStruct, ~] = c3d_to_trc("weight.c3d", trialDir);
+
+%%
+% ==== Get Hip Joint Centers ==== %
+if hjc_method == "func"
+    hjc_vec = getFunHJC(trialDir);
+elseif hjc_method == "hara"
+    hjc_vec = getHaraHJC(calMarkerStruct);
+end
+% Transform to global coordinate system
+% transformCoords()
+% ==== Get Scale Parameters ==== %
 [scales, coords, mRegLocs] = scaleAndReg(calMarkerStruct);
 
+%%
 % ==== Construct Scaled Model ==== %
 model = constructThreeSeg(subj, scales);  
 % ===== Adjust the Coordinates ========%
