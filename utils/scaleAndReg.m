@@ -1,14 +1,16 @@
-import org.opensim.modeling.*
-addpath("../utils/")
-% ========== Get File ========= %
-path = "C:\Users\jegre\OneDrive - University College Dublin\Modules\Project\code\RS_jump\data\sets";
-subj = "SN602";
-date_dirs = dir(fullfile(path, subj));
-date_dirs = date_dirs(3:end);
-date = date_dirs(1).name;
-[markerStruct, ~] = c3d_to_trc("weight.c3d", fullfile(path, subj, date));
+function [scales, coords, mRegLocs] = scaleAndReg(markerStruct)
+%SCALEANDREG parameters to scale and register the 3 segment model.
+%   4/4/26: Copied into a function from from scale_reg.m
+arguments (Input)
+    markerStruct % comes from c3d_to_trc function, first entry of each time-series removed.
+end
 
-% =========== Get Lengths =========== %
+arguments (Output)
+    scales
+    coords
+    mRegLocs
+end
+
 mns = fieldnames(markerStruct);
 hjc = markerStruct.V_R_HJC;
 kjc = markerStruct.V_R_KJC;
@@ -16,13 +18,14 @@ ajc = markerStruct.V_R_AJC;
 mt2 = markerStruct.V_R_2MT;
 
 thigh_vec = hjc - kjc;
-shank_vec = kjc - ajc;
+shank_vec = kjc -ajc;
 foot_vec = mt2 - ajc;
 
 thigh_len = vecnorm(thigh_vec, 2, 2);
 shank_len = vecnorm(shank_vec, 2, 2);
 foot_len = vecnorm(foot_vec, 2, 2);
 
+% Pick a nice static period for calculating lengths.
 [thigh_mean, thigh_std, thigh_idx] = quiet_avg(thigh_len);
 [shank_mean, shank_std, shank_idx] = quiet_avg(shank_len);
 [foot_mean, foot_std, foot_idx] = quiet_avg(foot_len);
@@ -31,7 +34,7 @@ fprintf('Thigh: %.4f ± %.2f m at index %d \n', thigh_mean, thigh_std, thigh_idx
 fprintf('Shank: %.4f ± %.2f m at index %d \n', shank_mean, shank_std, shank_idx);
 fprintf('Foot:  %.4f ± %.2f m at index %d \n', foot_mean,  foot_std,  foot_idx);
 
-quiet_idx = thigh_idx;
+quiet_idx = thigh_idx; % Use this snapshot in time for registration
 
 % ======== Get Orientation Matrices ==========%
 midpoint = @(a, b) (a + b) / 2;
@@ -92,6 +95,8 @@ R_thigh = squeeze(R_thigh_g_a(1001, :, :));
 R_shank = squeeze(R_shank_g_a(1001, :, :));
 R_foot  = squeeze(R_foot_g_a(1001, :, :));
 
+% Opensim coordinates are hierachical,
+% Orientations expressed in the frame of their parent.
 R_p_t = R_pelv'  * R_thigh;
 R_t_s = R_thigh' * R_shank;
 R_s_f = R_shank' * R_foot;
@@ -111,13 +116,18 @@ disp(struct2array(to_deg(getCardan(R_foot))))
 ankle_angles = to_deg(getCardan(R_s_f));
 disp(struct2array(ankle_angles))
 
+% ==== Set the outputs ==== %
 scales = struct("thigh", thigh_mean, "shank", shank_mean, "foot", foot_mean);
 coords = struct( ...
     "hip", struct("flex", hip_angles.gamma, "tx", hjc(thigh_idx, 1), "ty", hjc(thigh_idx, 2), "tz", hjc(thigh_idx, 3)), ...
     "knee", knee_angles.gamma, ...
     "ankle", ankle_angles.gamma );
 
+% Just grab the marker locations at the quiet_idx for registration, c3d
+% names converted to opensim at a later time.
 mRegLocs = struct;
 for i = 1:length(mns)
-    mRegLocs.(mns{i}) = markerStruct.(mns{i})(thigh_idx, :);
+    mRegLocs.(mns{i}) = markerStruct.(mns{i})(quiet_idx, :);
+end
+
 end

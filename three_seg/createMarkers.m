@@ -1,0 +1,29 @@
+marker_list = struct;
+
+marker_list.thigh = struct( ...
+    "V_R_GreaterTrochanter", "gt", ...
+    "V_R_LateralFemoralEpicondyle", "lfe", ...
+    "V_R_MedialFemoralEpicondyle", "mfe");
+marker_list.shank = struct(...
+    "V_R_LateralMalleolus", "lm", ...
+    "V_R_MedialMalleolus", "mm");
+marker_list.foot = struct(...
+    "R_5MT", "toe", ...
+    "R_InStep", "instep", ...
+    "R_Heel", "heel", ...
+    "V_R_2MT", "mt2");
+
+bodies = fieldnames(marker_list);
+conversions = struct;
+for i = 1:length(bodies)
+    
+    body = bodies{i};
+    inStruct = marker_list.(body);
+    marks = fieldnames(marker_list.(body));
+    for j = 1:length(marks)
+        c3d_name = marks{j};
+        conversions.(c3d_name) = inStruct.(c3d_name);
+    end
+end 
+    
+save("marker_list.mat", "marker_list", "conversions")

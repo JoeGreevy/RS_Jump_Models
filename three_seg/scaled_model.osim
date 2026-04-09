@@ -40,7 +40,7 @@
 									<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
 									<socket_frame>..</socket_frame>
 									<!--Scale factors in X, Y, Z directions respectively.-->
-									<scale_factors>0.44749993709688202 0.44749993709688202 0.44749993709688202</scale_factors>
+									<scale_factors>1.0373436146263499 1.0373436146263499 1.0373436146263499</scale_factors>
 									<!--Default appearance attributes for this Geometry-->
 									<Appearance>
 										<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
@@ -49,13 +49,13 @@
 									<!--Radius of cylinder.-->
 									<radius>0.025000000000000001</radius>
 									<!--Half-Height of cylinder.-->
-									<half_height>0.5</half_height>
+									<half_height>0.20999999999999999</half_height>
 								</Cylinder>
 							</attached_geometry>
 							<!--Path to a Component that satisfies the Socket 'parent' of type C (description: The parent frame to this frame.).-->
 							<socket_parent>..</socket_parent>
 							<!--Translational offset (in meters) of this frame's origin from the parent frame's origin, expressed in the parent frame.-->
-							<translation>0 0 0</translation>
+							<translation>0 -0.21784215907153348 0</translation>
 							<!--Orientation offset (in radians) of this frame in its parent frame, expressed as a frame-fixed x-y-z rotation sequence.-->
 							<orientation>-0 0 -0</orientation>
 						</PhysicalOffsetFrame>
@@ -68,11 +68,11 @@
 						<scale_factors>0.20000000000000001 0.20000000000000001 0.20000000000000001</scale_factors>
 					</FrameGeometry>
 					<!--The mass of the body (kg)-->
-					<mass>3.3333333333333335</mass>
+					<mass>6.5034965034965033</mass>
 					<!--The location (Vec3) of the mass center in the body frame.-->
-					<mass_center>0 0 0</mass_center>
+					<mass_center>0 -0.21784215907153348 0</mass_center>
 					<!--The elements of the inertia tensor (Vec6) as [Ixx Iyy Izz Ixy Ixz Iyz] measured about the mass_center and not the body origin.-->
-					<inertia>0.088780245874426261 0.088780245874426261 0.088780245874426261 0 0 0</inertia>
+					<inertia>0.10008313010433996 0.10008313010433996 0.10008313010433996 0 0 0</inertia>
 				</Body>
 				<Body name="shank">
 					<!--List of components that this component owns and serializes.-->
@@ -91,7 +91,7 @@
 									<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
 									<socket_frame>..</socket_frame>
 									<!--Scale factors in X, Y, Z directions respectively.-->
-									<scale_factors>0.45020337333817245 0.45020337333817245 0.45020337333817245</scale_factors>
+									<scale_factors>1.1539883344237083 1.1539883344237083 1.1539883344237083</scale_factors>
 									<!--Default appearance attributes for this Geometry-->
 									<Appearance>
 										<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
@@ -100,13 +100,13 @@
 									<!--Radius of cylinder.-->
 									<radius>0.025000000000000001</radius>
 									<!--Half-Height of cylinder.-->
-									<half_height>0.5</half_height>
+									<half_height>0.19500000000000001</half_height>
 								</Cylinder>
 							</attached_geometry>
 							<!--Path to a Component that satisfies the Socket 'parent' of type C (description: The parent frame to this frame.).-->
 							<socket_parent>..</socket_parent>
 							<!--Translational offset (in meters) of this frame's origin from the parent frame's origin, expressed in the parent frame.-->
-							<translation>0 0 0</translation>
+							<translation>0 0.22502772521262313 0</translation>
 							<!--Orientation offset (in radians) of this frame in its parent frame, expressed as a frame-fixed x-y-z rotation sequence.-->
 							<orientation>-0 0 -0</orientation>
 						</PhysicalOffsetFrame>
@@ -119,11 +119,11 @@
 						<scale_factors>0.20000000000000001 0.20000000000000001 0.20000000000000001</scale_factors>
 					</FrameGeometry>
 					<!--The mass of the body (kg)-->
-					<mass>3.3333333333333335</mass>
+					<mass>2.5874125874125875</mass>
 					<!--The location (Vec3) of the mass center in the body frame.-->
-					<mass_center>0 0 0</mass_center>
+					<mass_center>0 0.22502772521262313 0</mass_center>
 					<!--The elements of the inertia tensor (Vec6) as [Ixx Iyy Izz Ixy Ixz Iyz] measured about the mass_center and not the body origin.-->
-					<inertia>0.089856164298514327 0.089856164298514327 0.089856164298514327 0 0 0</inertia>
+					<inertia>0.1238563965777193 0.1238563965777193 0.1238563965777193 0 0 0</inertia>
 				</Body>
 				<Body name="foot">
 					<!--List of components that this component owns and serializes.-->
@@ -142,7 +142,7 @@
 									<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
 									<socket_frame>..</socket_frame>
 									<!--Scale factors in X, Y, Z directions respectively.-->
-									<scale_factors>0.52773432287207456 0.52773432287207456 0.52773432287207456</scale_factors>
+									<scale_factors>1.607564979139019 1.607564979139019 1.607564979139019</scale_factors>
 									<!--Default appearance attributes for this Geometry-->
 									<Appearance>
 										<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
@@ -151,13 +151,13 @@
 									<!--Radius of cylinder.-->
 									<radius>0.02</radius>
 									<!--Half-Height of cylinder.-->
-									<half_height>0.20000000000000001</half_height>
+									<half_height>0.10000000000000001</half_height>
 								</Cylinder>
 							</attached_geometry>
 							<!--Path to a Component that satisfies the Socket 'parent' of type C (description: The parent frame to this frame.).-->
 							<socket_parent>..</socket_parent>
 							<!--Translational offset (in meters) of this frame's origin from the parent frame's origin, expressed in the parent frame.-->
-							<translation>0 0 0</translation>
+							<translation>0 -0.1607564979139019 0</translation>
 							<!--Orientation offset (in radians) of this frame in its parent frame, expressed as a frame-fixed x-y-z rotation sequence.-->
 							<orientation>-0 0 -0</orientation>
 						</PhysicalOffsetFrame>
@@ -170,11 +170,11 @@
 						<scale_factors>0.20000000000000001 0.20000000000000001 0.20000000000000001</scale_factors>
 					</FrameGeometry>
 					<!--The mass of the body (kg)-->
-					<mass>3.3333333333333335</mass>
+					<mass>0.90909090909090906</mass>
 					<!--The location (Vec3) of the mass center in the body frame.-->
-					<mass_center>0 0 0</mass_center>
+					<mass_center>0.1607564979139019 -0.048226949374170568 0</mass_center>
 					<!--The elements of the inertia tensor (Vec6) as [Ixx Iyy Izz Ixy Ixz Iyz] measured about the mass_center and not the body origin.-->
-					<inertia>0.12346989188817956 0.12346989188817956 0.12346989188817956 0 0 0</inertia>
+					<inertia>0.24035473186469453 0.24035473186469453 0.24035473186469453 0 0 0</inertia>
 				</Body>
 			</objects>
 			<groups />
@@ -233,7 +233,7 @@
 									<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
 									<socket_frame>..</socket_frame>
 									<!--Scale factors in X, Y, Z directions respectively.-->
-									<scale_factors>0.44749993709688202 0.44749993709688202 0.44749993709688202</scale_factors>
+									<scale_factors>1.0373436146263499 1.0373436146263499 1.0373436146263499</scale_factors>
 									<!--Default appearance attributes for this Geometry-->
 									<Appearance>
 										<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
@@ -246,7 +246,7 @@
 							<!--Path to a Component that satisfies the Socket 'parent' of type C (description: The parent frame to this frame.).-->
 							<socket_parent>/bodyset/thigh</socket_parent>
 							<!--Translational offset (in meters) of this frame's origin from the parent frame's origin, expressed in the parent frame.-->
-							<translation>0 0.22374996854844101 0</translation>
+							<translation>0 0 0</translation>
 							<!--Orientation offset (in radians) of this frame in its parent frame, expressed as a frame-fixed x-y-z rotation sequence.-->
 							<orientation>0 0 0</orientation>
 						</PhysicalOffsetFrame>
@@ -341,7 +341,7 @@
 							<!--Path to a Component that satisfies the Socket 'parent' of type C (description: The parent frame to this frame.).-->
 							<socket_parent>/bodyset/thigh</socket_parent>
 							<!--Translational offset (in meters) of this frame's origin from the parent frame's origin, expressed in the parent frame.-->
-							<translation>0 -0.22374996854844101 0</translation>
+							<translation>-0.010373436146263499 -0.43568431814306696 0</translation>
 							<!--Orientation offset (in radians) of this frame in its parent frame, expressed as a frame-fixed x-y-z rotation sequence.-->
 							<orientation>0 0 0</orientation>
 						</PhysicalOffsetFrame>
@@ -359,7 +359,7 @@
 									<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
 									<socket_frame>..</socket_frame>
 									<!--Scale factors in X, Y, Z directions respectively.-->
-									<scale_factors>0.45020337333817245 0.45020337333817245 0.45020337333817245</scale_factors>
+									<scale_factors>1.1539883344237083 1.1539883344237083 1.1539883344237083</scale_factors>
 									<!--Default appearance attributes for this Geometry-->
 									<Appearance>
 										<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
@@ -372,7 +372,7 @@
 							<!--Path to a Component that satisfies the Socket 'parent' of type C (description: The parent frame to this frame.).-->
 							<socket_parent>/bodyset/shank</socket_parent>
 							<!--Translational offset (in meters) of this frame's origin from the parent frame's origin, expressed in the parent frame.-->
-							<translation>0 0.22510168666908623 0</translation>
+							<translation>-0.011539883344237082 0.45005545042524625 0</translation>
 							<!--Orientation offset (in radians) of this frame in its parent frame, expressed as a frame-fixed x-y-z rotation sequence.-->
 							<orientation>0 0 0</orientation>
 						</PhysicalOffsetFrame>
@@ -403,7 +403,7 @@
 							<!--Path to a Component that satisfies the Socket 'parent' of type C (description: The parent frame to this frame.).-->
 							<socket_parent>/bodyset/shank</socket_parent>
 							<!--Translational offset (in meters) of this frame's origin from the parent frame's origin, expressed in the parent frame.-->
-							<translation>0 -0.22510168666908623 0</translation>
+							<translation>-0.011539883344237082 0 0</translation>
 							<!--Orientation offset (in radians) of this frame in its parent frame, expressed as a frame-fixed x-y-z rotation sequence.-->
 							<orientation>0 0 0</orientation>
 						</PhysicalOffsetFrame>
@@ -421,7 +421,7 @@
 									<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
 									<socket_frame>..</socket_frame>
 									<!--Scale factors in X, Y, Z directions respectively.-->
-									<scale_factors>0.52773432287207456 0.52773432287207456 0.52773432287207456</scale_factors>
+									<scale_factors>1.607564979139019 1.607564979139019 1.607564979139019</scale_factors>
 									<!--Default appearance attributes for this Geometry-->
 									<Appearance>
 										<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
@@ -434,7 +434,7 @@
 							<!--Path to a Component that satisfies the Socket 'parent' of type C (description: The parent frame to this frame.).-->
 							<socket_parent>/bodyset/foot</socket_parent>
 							<!--Translational offset (in meters) of this frame's origin from the parent frame's origin, expressed in the parent frame.-->
-							<translation>0 0.10554686457441492 0</translation>
+							<translation>0 0 0</translation>
 							<!--Orientation offset (in radians) of this frame in its parent frame, expressed as a frame-fixed x-y-z rotation sequence.-->
 							<orientation>0 0 0</orientation>
 						</PhysicalOffsetFrame>
@@ -460,43 +460,43 @@
 					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
 					<socket_parent_frame>/bodyset/thigh</socket_parent_frame>
 					<!--The fixed location of the station expressed in its parent frame.-->
-					<location>0 0.20137497169359692 0.089499987419376412</location>
+					<location>-0.010373436146263499 -0.031120308438790496 0.072614053023844508</location>
 				</Marker>
 				<Marker name="lfe">
 					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
 					<socket_parent_frame>/bodyset/thigh</socket_parent_frame>
 					<!--The fixed location of the station expressed in its parent frame.-->
-					<location>0 -0.20137497169359692 0.044749993709688206</location>
+					<location>0 -0.43568431814306696 0.051867180731317498</location>
 				</Marker>
 				<Marker name="mfe">
 					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
 					<socket_parent_frame>/bodyset/thigh</socket_parent_frame>
 					<!--The fixed location of the station expressed in its parent frame.-->
-					<location>0 -0.20137497169359692 -0.022374996854844103</location>
+					<location>0 -0.43568431814306696 -0.051867180731317498</location>
 				</Marker>
 				<Marker name="lm">
 					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
 					<socket_parent_frame>/bodyset/shank</socket_parent_frame>
 					<!--The fixed location of the station expressed in its parent frame.-->
-					<location>0 -0.20259151800217762 0.045020337333817245</location>
+					<location>-0.011539883344237082 0 0.05769941672118542</location>
 				</Marker>
 				<Marker name="mm">
 					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
 					<socket_parent_frame>/bodyset/shank</socket_parent_frame>
 					<!--The fixed location of the station expressed in its parent frame.-->
-					<location>0 -0.20259151800217762 -0.022510168666908623</location>
+					<location>0.011539883344237082 0 -0.046159533376948329</location>
 				</Marker>
 				<Marker name="toe">
 					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
 					<socket_parent_frame>/bodyset/foot</socket_parent_frame>
 					<!--The fixed location of the station expressed in its parent frame.-->
-					<location>0.0052773432287207458 -0.0052773432287207458 0.042218745829765966</location>
+					<location>0.01607564979139019 -0.12860519833112152 0.064302599165560761</location>
 				</Marker>
 				<Marker name="instep">
 					<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame to which this station is fixed.).-->
 					<socket_parent_frame>/bodyset/foot</socket_parent_frame>
 					<!--The fixed location of the station expressed in its parent frame.-->
-					<location>0.026386716143603731 -0.036941402601045226 -0.042218745829765966</location>
+					<location>0.032151299582780381 0 -0.048226949374170568</location>
 				</Marker>
 			</objects>
 			<groups />
