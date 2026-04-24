@@ -1,13 +1,18 @@
-function [nMS, forceStruct] = c3d_to_trc(file, location, conversions)
+function [nMS, forceStruct] = c3d_to_trc(file, location, conversions, newName)
     arguments
         file
         location
         conversions = struct
+        newName = ""
     end
     import org.opensim.modeling.*
     % adapting from C3D export;
     c3d = osimC3D(fullfile(location, file), 0);
-    name = extractBefore(file, ".c3d");
+    if newName == ""
+        name = extractBefore(file, ".c3d");
+    else
+        name = newName;
+    end
     
     nTraj = c3d.getNumTrajectories;
     t0 = c3d.getStartTime();

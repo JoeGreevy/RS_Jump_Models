@@ -1,8 +1,8 @@
-function [model] = constructThreeSeg(subj, scales)
-%UNTITLED Summary of this function goes here
+function [model] = constructThreeSeg(name, scales)
+%CONSTRUCTTHREESEG Summary of this function goes here
 %   Detailed explanation goes here
 arguments (Input)
-    subj
+    name
     scales
 end
 
@@ -11,7 +11,6 @@ arguments (Output)
 end
 import org.opensim.modeling.*
 model = Model();
-name = subj+"_three_seg";
 model.setName(name)
 
 % scaling parameters

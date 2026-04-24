@@ -9,7 +9,7 @@ addpath("../utils")
 
 %%
 % ===== Get Marker Data ===== %
-subj = "SN608";
+subj = "SN129";
 sets_path = fullfile("..", "..", "..", "..", "..", "..", "OneDrive - University College Dublin/", ...
     "Modules", "Project", "code", "RS_jump", "data", "sets");
 dates = {dir(fullfile(sets_path, subj)).name};
@@ -104,3 +104,17 @@ daspect([1 1 1])
 pbaspect([1 1 1])
 rotate3d on;
 grid on;
+
+%%
+hara_hjc = [-0.05, -0.0850, 0.0918];
+hara_hjc_g = toGlobal(hara_hjc, R_pelv_g_a, pelvic_origin);
+func_hjc_g = toGlobal(c, R_pelv_g_a, pelvic_origin);
+hara_dist = vecnorm(hara_hjc_g - thigh_marks{3}, 2, 2);
+func_dist = vecnorm(func_hjc_g - thigh_marks{3}, 2, 2);
+%%
+N = length(hara_dist);
+time = (1:N)/200;
+hold on
+plot(time, hara_dist, "DisplayName","hara")
+plot(time, func_dist, "DisplayName", "func")
+legend

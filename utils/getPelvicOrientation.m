@@ -1,4 +1,4 @@
-function R_g_a = getPelvicOrientation(markerStruct)
+function [R_g_a, pelvic_origin] = getPelvicOrientation(markerStruct)
 %GETPELVICORIENTATION Summary of this function goes here
 %   09/04/26
 %   Adapted from three_seg/func_hjc.m
@@ -8,6 +8,7 @@ end
 
 arguments (Output)
     R_g_a
+    pelvic_origin
 end
 % Taking from scale and reg
 midpoint = @(a, b) (a + b) / 2;
