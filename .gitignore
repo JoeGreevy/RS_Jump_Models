@@ -18,3 +18,10 @@ Thumbs.db
 # IDE folders
 .vscode/
 .idea/
+
+*.mot
+*.sto
+*.trc
+*.trc
+*.parquet
+*.csv

@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<OpenSimDocument Version="30000">
+\t<ScaleTool name="SN129_scale">
+\t\t<mass>72.840</mass>
+\t\t<height>1800</height>
+\t\t<age>0</age>
+\t\t<notes>SN129 marker set adaptation of Rajagopal 2016</notes>
+\t\t<GenericModelMaker>
+\t\t\t<model_file>Rajagopal_low.osim</model_file>
+\t\t\t<marker_set_file>Unassigned</marker_set_file>
+\t\t</GenericModelMaker>
+\t\t<ModelScaler>
+\t\t\t<apply>true</apply>
+\t\t\t<scaling_order> measurements manualScale </scaling_order>
+\t\t\t<MeasurementSet name="marker_measurements">
+\t\t\t\t<objects>
+\t\t\t\t\t<Measurement name="pelvis_X">
+\t\t\t\t\t\t<apply>true</apply>
+\t\t\t\t\t\t<MarkerPairSet>
+\t\t\t\t\t\t\t<objects>
+\t\t\t\t\t\t\t\t<MarkerPair>
+\t\t\t\t\t\t\t\t\t<markers> R_ASIS R_PSIS</markers>
+\t\t\t\t\t\t\t\t</MarkerPair>
+\t\t\t\t\t\t\t\t<MarkerPair>
+\t\t\t\t\t\t\t\t\t<markers> L_ASIS L_PSIS</markers>
+\t\t\t\t\t\t\t\t</MarkerPair>
+\t\t\t\t\t\t\t</objects>
+\t\t\t\t\t\t\t<groups />
+\t\t\t\t\t\t</MarkerPairSet>
+\t\t\t\t\t\t<BodyScaleSet>
+\t\t\t\t\t\t\t<objects>
+\t\t\t\t\t\t\t\t<BodyScale name="pelvis">
+\t\t\t\t\t\t\t\t\t<axes> X</axes>
+\t\t\t\t\t\t\t\t</BodyScale>
+\t\t\t\t\t\t\t</objects>
+\t\t\t\t\t\t\t<groups />
+\t\t\t\t\t\t</BodyScaleSet>
+\t\t\t\t\t</Measurement>
+\t\t\t\t\t<Measurement name="pelvis_Y">
+\t\t\t\t\t\t<apply>true</apply>
+\t\t\t\t\t\t<MarkerPairSet>
+\t\t\t\t\t\t\t<objects>
+\t\t\t\t\t\t\t\t<MarkerPair>
+\t\t\t\t\t\t\t\t\t<markers> R_PSIS RHJC</markers>
+\t\t\t\t\t\t\t\t</MarkerPair>
+\t\t\t\t\t\t\t\t<MarkerPair>
+\t\t\t\t\t\t\t\t\t<markers> R_ASIS RHJC</markers>
+\t\t\t\t\t\t\t\t</MarkerPair>
+\t\t\t\t\t\t\t\t<MarkerPair>
+\t\t\t\t\t\t\t\t\t<markers> L_PSIS LHJC</markers>
+\t\t\t\t\t\t\t\t</MarkerPair>
+\t\t\t\t\t\t\t\t<MarkerPair>
+\t\t\t\t\t\t\t\t\t<markers> L_ASIS LHJC</markers>
+\t\t\t\t\t\t\t\t</MarkerPair>
+\t\t\t\t\t\t\t</objects>
+\t\t\t\t\t\t\t<groups />
+\t\t\t\t\t\t</MarkerPairSet>
+\t\t\t\t\t\t<BodyScaleSet>
+\t\t\t\t\t\t\t<objects>
+\t\t\t\t\t\t\t\t<BodyScale name="pelvis">
+\t\t\t\t\t\t\t\t\t<axes> Y</axes>
+\t\t\t\t\t\t\t\t</BodyScale>
+\t\t\t\t\t\t\t</objects>
+\t\t\t\t\t\t\t<groups />
+\t\t\t\t\t\t</BodyScaleSet>
+\t\t\t\t\t</Measurement>
+\t\t\t\t\t<Measurement name="pelvis_Z">
+\t\t\t\t\t\t<apply>true</apply>
+\t\t\t\t\t\t<MarkerPairSet>
+\t\t\t\t\t\t\t<objects>
+\t\t\t\t\t\t\t\t<MarkerPair>
+\t\t\t\t\t\t\t\t\t<markers> R_PSIS L_PSIS</markers>
+\t\t\t\t\t\t\t\t</MarkerPair>
+\t\t\t\t\t\t\t\t<MarkerPair>
+\t\t\t\t\t\t\t\t\t<markers> R_ASIS L_ASIS</markers>
+\t\t\t\t\t\t\t\t</MarkerPair>
+\t\t\t\t\t\t\t</objects>
+\t\t\t\t\t\t\t<groups />
+\t\t\t\t\t\t</MarkerPairSet>
+\t\t\t\t\t\t<BodyScaleSet>
+\t\t\t\t\t\t\t<objects>
+\t\t\t\t\t\t\t\t<BodyScale name="pelvis">
+\t\t\t\t\t\t\t\t\t<axes> Z</axes>
+\t\t\t\t\t\t\t\t</BodyScale>
+\t\t\t\t\t\t\t</objects>
+\t\t\t\t\t\t\t<groups />
+\t\t\t\t\t\t</BodyScaleSet>
+\t\t\t\t\t</Measurement>
+\t\t\t\t\t<Measurement name="thigh">
+\t\t\t\t\t\t<apply>true</apply>
+\t\t\t\t\t\t<MarkerPairSet>
+\t\t\t\t\t\t\t<objects>
+\t\t\t\t\t\t\t\t<MarkerPair>
+\t\t\t\t\t\t\t\t\t<markers> RHJC R_lfe</markers>
+\t\t\t\t\t\t\t\t</MarkerPair>
+\t\t\t\t\t\t\t\t<MarkerPair>
+\t\t\t\t\t\t\t\t\t<markers> RHJC R_mfe</markers>
+\t\t\t\t\t\t\t\t</MarkerPair>
+\t\t\t\t\t\t\t\t<MarkerPair>
+\t\t\t\t\t\t\t\t\t<markers> LHJC L_lfe</markers>
+\t\t\t\t\t\t\t\t</MarkerPair>
+\t\t\t\t\t\t\t\t<MarkerPair>
+\t\t\t\t\t\t\t\t\t<markers> LHJC L_mfe</markers>
+\t\t\t\t\t\t\t\t</MarkerPair>
+\t\t\t\t\t\t\t</objects>
+\t\t\t\t\t\t\t<groups />
+\t\t\t\t\t\t</MarkerPairSet>
+\t\t\t\t\t\t<BodyScaleSet>
+\t\t\t\t\t\t\t<objects>
+\t\t\t\t\t\t\t\t<BodyScale name="femur_r">
+\t\t\t\t\t\t\t\t\t<axes> X Y Z</axes>
+\t\t\t\t\t\t\t\t</BodyScale>
+\t\t\t\t\t\t\t\t<BodyScale name="femur_l">
+\t\t\t\t\t\t\t\t\t<axes> X Y Z</axes>
+\t\t\t\t\t\t\t\t</BodyScale>
+\t\t\t\t\t\t\t</objects>
+\t\t\t\t\t\t\t<groups />
+\t\t\t\t\t\t</BodyScaleSet>
+\t\t\t\t\t</Measurement>
+\t\t\t\t\t<Measurement name="shank">
+\t\t\t\t\t\t<apply>true</apply>
+\t\t\t\t\t\t<MarkerPairSet>
+\t\t\t\t\t\t\t<objects>
+\t\t\t\t\t\t\t\t<MarkerPair>
+\t\t\t\t\t\t\t\t\t<markers> R_lfe R_lm</markers>
+\t\t\t\t\t\t\t\t</MarkerPair>
+\t\t\t\t\t\t\t\t<MarkerPair>
+\t\t\t\t\t\t\t\t\t<markers> R_mfe R_mm</markers>
+\t\t\t\t\t\t\t\t</MarkerPair>
+\t\t\t\t\t\t\t\t<MarkerPair>
+\t\t\t\t\t\t\t\t\t<markers> L_lfe L_lm</markers>
+\t\t\t\t\t\t\t\t</MarkerPair>
+\t\t\t\t\t\t\t\t<MarkerPair>
+\t\t\t\t\t\t\t\t\t<markers> L_mfe L_mm</markers>
+\t\t\t\t\t\t\t\t</MarkerPair>
+\t\t\t\t\t\t\t</objects>
+\t\t\t\t\t\t\t<groups />
+\t\t\t\t\t\t</MarkerPairSet>
+\t\t\t\t\t\t<BodyScaleSet>
+\t\t\t\t\t\t\t<objects>
+\t\t\t\t\t\t\t\t<BodyScale name="tibia_r">
+\t\t\t\t\t\t\t\t\t<axes> X Y Z</axes>
+\t\t\t\t\t\t\t\t</BodyScale>
+\t\t\t\t\t\t\t\t<BodyScale name="tibia_l">
+\t\t\t\t\t\t\t\t\t<axes> X Y Z</axes>
+\t\t\t\t\t\t\t\t</BodyScale>
+\t\t\t\t\t\t\t</objects>
+\t\t\t\t\t\t\t<groups />
+\t\t\t\t\t\t</BodyScaleSet>
+\t\t\t\t\t</Measurement>
+\t\t\t\t\t<Measurement name="foot">
+\t\t\t\t\t\t<apply>true</apply>
+\t\t\t\t\t\t<MarkerPairSet>
+\t\t\t\t\t\t\t<objects>
+\t\t\t\t\t\t\t\t<MarkerPair>
+\t\t\t\t\t\t\t\t\t<markers> R_heel R_instep</markers>
+\t\t\t\t\t\t\t\t</MarkerPair>
+\t\t\t\t\t\t\t\t<MarkerPair>
+\t\t\t\t\t\t\t\t\t<markers> R_heel R_5MT</markers>
+\t\t\t\t\t\t\t\t</MarkerPair>
+\t\t\t\t\t\t\t\t<MarkerPair>
+\t\t\t\t\t\t\t\t\t<markers> L_heel L_instep</markers>
+\t\t\t\t\t\t\t\t</MarkerPair>
+\t\t\t\t\t\t\t\t<MarkerPair>
+\t\t\t\t\t\t\t\t\t<markers> L_heel L_5MT</markers>
+\t\t\t\t\t\t\t\t</MarkerPair>
+\t\t\t\t\t\t\t</objects>
+\t\t\t\t\t\t\t<groups />
+\t\t\t\t\t\t</MarkerPairSet>
+\t\t\t\t\t\t<BodyScaleSet>
+\t\t\t\t\t\t\t<objects>
+\t\t\t\t\t\t\t\t<BodyScale name="talus_r">
+\t\t\t\t\t\t\t\t\t<axes> X Y Z</axes>
+\t\t\t\t\t\t\t\t</BodyScale>
+\t\t\t\t\t\t\t\t<BodyScale name="calcn_r">
+\t\t\t\t\t\t\t\t\t<axes> X Y Z</axes>
+\t\t\t\t\t\t\t\t</BodyScale>
+\t\t\t\t\t\t\t\t<BodyScale name="toes_r">
+\t\t\t\t\t\t\t\t\t<axes> X Y Z</axes>
+\t\t\t\t\t\t\t\t</BodyScale>
+\t\t\t\t\t\t\t\t<BodyScale name="talus_l">
+\t\t\t\t\t\t\t\t\t<axes> X Y Z</axes>
+\t\t\t\t\t\t\t\t</BodyScale>
+\t\t\t\t\t\t\t\t<BodyScale name="calcn_l">
+\t\t\t\t\t\t\t\t\t<axes> X Y Z</axes>
+\t\t\t\t\t\t\t\t</BodyScale>
+\t\t\t\t\t\t\t\t<BodyScale name="toes_l">
+\t\t\t\t\t\t\t\t\t<axes> X Y Z</axes>
+\t\t\t\t\t\t\t\t</BodyScale>
+\t\t\t\t\t\t\t</objects>
+\t\t\t\t\t\t\t<groups />
+\t\t\t\t\t\t</BodyScaleSet>
+\t\t\t\t\t</Measurement>
+\t\t\t\t\t<Measurement name="torso">
+\t\t\t\t\t\t<apply>false</apply>
+\t\t\t\t\t\t<MarkerPairSet>
+\t\t\t\t\t\t\t<objects>
+\t\t\t\t\t\t\t\t<MarkerPair>
+\t\t\t\t\t\t\t\t\t<markers> R_ASIS L_ASIS</markers>
+\t\t\t\t\t\t\t\t</MarkerPair>
+\t\t\t\t\t\t\t</objects>
+\t\t\t\t\t\t\t<groups />
+\t\t\t\t\t\t</MarkerPairSet>
+\t\t\t\t\t\t<BodyScaleSet>
+\t\t\t\t\t\t\t<objects>
+\t\t\t\t\t\t\t\t<BodyScale name="torso">
+\t\t\t\t\t\t\t\t\t<axes> X Y Z</axes>
+\t\t\t\t\t\t\t\t</BodyScale>
+\t\t\t\t\t\t\t</objects>
+\t\t\t\t\t\t\t<groups />
+\t\t\t\t\t\t</BodyScaleSet>
+\t\t\t\t\t</Measurement>
+\t\t\t\t\t<Measurement name="humerus">
+\t\t\t\t\t\t<apply>false</apply>
+\t\t\t\t\t\t<MarkerPairSet>
+\t\t\t\t\t\t\t<objects>
+\t\t\t\t\t\t\t\t<MarkerPair>
+\t\t\t\t\t\t\t\t\t<markers> R_ASIS L_ASIS</markers>
+\t\t\t\t\t\t\t\t</MarkerPair>
+\t\t\t\t\t\t\t</objects>
+\t\t\t\t\t\t\t<groups />
+\t\t\t\t\t\t</MarkerPairSet>
+\t\t\t\t\t\t<BodyScaleSet>
+\t\t\t\t\t\t\t<objects>
+\t\t\t\t\t\t\t\t<BodyScale name="humerus_r">
+\t\t\t\t\t\t\t\t\t<axes> X Y Z</axes>
+\t\t\t\t\t\t\t\t</BodyScale>
+\t\t\t\t\t\t\t\t<BodyScale name="humerus_l">
+\t\t\t\t\t\t\t\t\t<axes> X Y Z</axes>
+\t\t\t\t\t\t\t\t</BodyScale>
+\t\t\t\t\t\t\t</objects>
+\t\t\t\t\t\t\t<groups />
+\t\t\t\t\t\t</BodyScaleSet>
+\t\t\t\t\t</Measurement>
+\t\t\t\t\t<Measurement name="radius">
+\t\t\t\t\t\t<apply>false</apply>
+\t\t\t\t\t\t<MarkerPairSet>
+\t\t\t\t\t\t\t<objects>
+\t\t\t\t\t\t\t\t<MarkerPair>
+\t\t\t\t\t\t\t\t\t<markers> R_ASIS L_ASIS</markers>
+\t\t\t\t\t\t\t\t</MarkerPair>
+\t\t\t\t\t\t\t</objects>
+\t\t\t\t\t\t\t<groups />
+\t\t\t\t\t\t</MarkerPairSet>
+\t\t\t\t\t\t<BodyScaleSet>
+\t\t\t\t\t\t\t<objects>
+\t\t\t\t\t\t\t\t<BodyScale name="ulna_r">
+\t\t\t\t\t\t\t\t\t<axes> X Y Z</axes>
+\t\t\t\t\t\t\t\t</BodyScale>
+\t\t\t\t\t\t\t\t<BodyScale name="radius_r">
+\t\t\t\t\t\t\t\t\t<axes> X Y Z</axes>
+\t\t\t\t\t\t\t\t</BodyScale>
+\t\t\t\t\t\t\t\t<BodyScale name="hand_r">
+\t\t\t\t\t\t\t\t\t<axes> X Y Z</axes>
+\t\t\t\t\t\t\t\t</BodyScale>
+\t\t\t\t\t\t\t\t<BodyScale name="ulna_l">
+\t\t\t\t\t\t\t\t\t<axes> X Y Z</axes>
+\t\t\t\t\t\t\t\t</BodyScale>
+\t\t\t\t\t\t\t\t<BodyScale name="radius_l">
+\t\t\t\t\t\t\t\t\t<axes> X Y Z</axes>
+\t\t\t\t\t\t\t\t</BodyScale>
+\t\t\t\t\t\t\t\t<BodyScale name="hand_l">
+\t\t\t\t\t\t\t\t\t<axes> X Y Z</axes>
+\t\t\t\t\t\t\t\t</BodyScale>
+\t\t\t\t\t\t\t</objects>
+\t\t\t\t\t\t\t<groups />
+\t\t\t\t\t\t</BodyScaleSet>
+\t\t\t\t\t</Measurement>
+\t\t\t\t</objects>
+\t\t\t\t<groups />
+\t\t\t</MeasurementSet>
+\t\t\t<ScaleSet name="manual_scale"><objects /><groups /></ScaleSet>
+\t\t\t<marker_file>weight.trc</marker_file>
+\t\t\t<time_range> 5 6 </time_range>
+\t\t\t<preserve_mass_distribution>true</preserve_mass_distribution>
+\t\t\t<output_model_file>subject_SN129_scaled.osim</output_model_file>
+\t\t\t<output_scale_file>scaleSet_applied_SN129.xml</output_scale_file>
+\t\t</ModelScaler>
+\t\t<MarkerPlacer>
+\t\t\t<apply>true</apply>
+\t\t\t<IKTaskSet name="scale_ik_SN129">
+\t\t\t\t<objects>
+\t\t\t\t\t<IKMarkerTask name="R_ASIS">
+\t\t\t\t\t\t<apply>true</apply>
+\t\t\t\t\t\t<weight>100</weight>
+\t\t\t\t\t</IKMarkerTask>
+\t\t\t\t\t<IKMarkerTask name="L_ASIS">
+\t\t\t\t\t\t<apply>true</apply>
+\t\t\t\t\t\t<weight>100</weight>
+\t\t\t\t\t</IKMarkerTask>
+\t\t\t\t\t<IKMarkerTask name="R_PSIS">
+\t\t\t\t\t\t<apply>true</apply>
+\t\t\t\t\t\t<weight>50</weight>
+\t\t\t\t\t</IKMarkerTask>
+\t\t\t\t\t<IKMarkerTask name="L_PSIS">
+\t\t\t\t\t\t<apply>true</apply>
+\t\t\t\t\t\t<weight>50</weight>
+\t\t\t\t\t</IKMarkerTask>
+\t\t\t\t\t<IKMarkerTask name="R_gt">
+\t\t\t\t\t\t<apply>true</apply>
+\t\t\t\t\t\t<weight>100</weight>
+\t\t\t\t\t</IKMarkerTask>
+\t\t\t\t\t<IKMarkerTask name="L_gt">
+\t\t\t\t\t\t<apply>true</apply>
+\t\t\t\t\t\t<weight>100</weight>
+\t\t\t\t\t</IKMarkerTask>
+\t\t\t\t\t<IKMarkerTask name="R_th0">
+\t\t\t\t\t\t<apply>true</apply>
+\t\t\t\t\t\t<weight>20</weight>
+\t\t\t\t\t</IKMarkerTask>
+\t\t\t\t\t<IKMarkerTask name="R_th1">
+\t\t\t\t\t\t<apply>true</apply>
+\t\t\t\t\t\t<weight>20</weight>
+\t\t\t\t\t</IKMarkerTask>
+\t\t\t\t\t<IKMarkerTask name="R_th2">
+\t\t\t\t\t\t<apply>true</apply>
+\t\t\t\t\t\t<weight>20</weight>
+\t\t\t\t\t</IKMarkerTask>
+\t\t\t\t\t<IKMarkerTask name="R_th3">
+\t\t\t\t\t\t<apply>true</apply>
+\t\t\t\t\t\t<weight>20</weight>
+\t\t\t\t\t</IKMarkerTask>
+\t\t\t\t\t<IKMarkerTask name="L_th0">
+\t\t\t\t\t\t<apply>true</apply>
+\t\t\t\t\t\t<weight>20</weight>
+\t\t\t\t\t</IKMarkerTask>
+\t\t\t\t\t<IKMarkerTask name="L_th1">
+\t\t\t\t\t\t<apply>true</apply>
+\t\t\t\t\t\t<weight>20</weight>
+\t\t\t\t\t</IKMarkerTask>
+\t\t\t\t\t<IKMarkerTask name="L_th2">
+\t\t\t\t\t\t<apply>true</apply>
+\t\t\t\t\t\t<weight>20</weight>
+\t\t\t\t\t</IKMarkerTask>
+\t\t\t\t\t<IKMarkerTask name="L_th3">
+\t\t\t\t\t\t<apply>true</apply>
+\t\t\t\t\t\t<weight>20</weight>
+\t\t\t\t\t</IKMarkerTask>
+\t\t\t\t\t<IKMarkerTask name="R_lfe">
+\t\t\t\t\t\t<apply>true</apply>
+\t\t\t\t\t\t<weight>50</weight>
+\t\t\t\t\t</IKMarkerTask>
+\t\t\t\t\t<IKMarkerTask name="R_mfe">
+\t\t\t\t\t\t<apply>true</apply>
+\t\t\t\t\t\t<weight>50</weight>
+\t\t\t\t\t</IKMarkerTask>
+\t\t\t\t\t<IKMarkerTask name="L_lfe">
+\t\t\t\t\t\t<apply>true</apply>
+\t\t\t\t\t\t<weight>50</weight>
+\t\t\t\t\t</IKMarkerTask>
+\t\t\t\t\t<IKMarkerTask name="L_mfe">
+\t\t\t\t\t\t<apply>true</apply>
+\t\t\t\t\t\t<weight>50</weight>
+\t\t\t\t\t</IKMarkerTask>
+\t\t\t\t\t<IKMarkerTask name="R_sh0">
+\t\t\t\t\t\t<apply>true</apply>
+\t\t\t\t\t\t<weight>20</weight>
+\t\t\t\t\t</IKMarkerTask>
+\t\t\t\t\t<IKMarkerTask name="R_sh1">
+\t\t\t\t\t\t<apply>true</apply>
+\t\t\t\t\t\t<weight>20</weight>
+\t\t\t\t\t</IKMarkerTask>
+\t\t\t\t\t<IKMarkerTask name="R_sh2">
+\t\t\t\t\t\t<apply>true</apply>
+\t\t\t\t\t\t<weight>20</weight>
+\t\t\t\t\t</IKMarkerTask>
+\t\t\t\t\t<IKMarkerTask name="R_sh3">
+\t\t\t\t\t\t<apply>true</apply>
+\t\t\t\t\t\t<weight>20</weight>
+\t\t\t\t\t</IKMarkerTask>
+\t\t\t\t\t<IKMarkerTask name="L_sh0">
+\t\t\t\t\t\t<apply>true</apply>
+\t\t\t\t\t\t<weight>20</weight>
+\t\t\t\t\t</IKMarkerTask>
+\t\t\t\t\t<IKMarkerTask name="L_sh1">
+\t\t\t\t\t\t<apply>true</apply>
+\t\t\t\t\t\t<weight>20</weight>
+\t\t\t\t\t</IKMarkerTask>
+\t\t\t\t\t<IKMarkerTask name="L_sh2">
+\t\t\t\t\t\t<apply>true</apply>
+\t\t\t\t\t\t<weight>20</weight>
+\t\t\t\t\t</IKMarkerTask>
+\t\t\t\t\t<IKMarkerTask name="L_sh3">
+\t\t\t\t\t\t<apply>true</apply>
+\t\t\t\t\t\t<weight>20</weight>
+\t\t\t\t\t</IKMarkerTask>
+\t\t\t\t\t<IKMarkerTask name="R_lm">
+\t\t\t\t\t\t<apply>true</apply>
+\t\t\t\t\t\t<weight>50</weight>
+\t\t\t\t\t</IKMarkerTask>
+\t\t\t\t\t<IKMarkerTask name="R_mm">
+\t\t\t\t\t\t<apply>true</apply>
+\t\t\t\t\t\t<weight>50</weight>
+\t\t\t\t\t</IKMarkerTask>
+\t\t\t\t\t<IKMarkerTask name="L_lm">
+\t\t\t\t\t\t<apply>true</apply>
+\t\t\t\t\t\t<weight>50</weight>
+\t\t\t\t\t</IKMarkerTask>
+\t\t\t\t\t<IKMarkerTask name="L_mm">
+\t\t\t\t\t\t<apply>true</apply>
+\t\t\t\t\t\t<weight>50</weight>
+\t\t\t\t\t</IKMarkerTask>
+\t\t\t\t\t<IKMarkerTask name="R_heel">
+\t\t\t\t\t\t<apply>true</apply>
+\t\t\t\t\t\t<weight>25</weight>
+\t\t\t\t\t</IKMarkerTask>
+\t\t\t\t\t<IKMarkerTask name="R_instep">
+\t\t\t\t\t\t<apply>true</apply>
+\t\t\t\t\t\t<weight>25</weight>
+\t\t\t\t\t</IKMarkerTask>
+\t\t\t\t\t<IKMarkerTask name="R_5MT">
+\t\t\t\t\t\t<apply>true</apply>
+\t\t\t\t\t\t<weight>25</weight>
+\t\t\t\t\t</IKMarkerTask>
+\t\t\t\t\t<IKMarkerTask name="R_mt2">
+\t\t\t\t\t\t<apply>true</apply>
+\t\t\t\t\t\t<weight>15</weight>
+\t\t\t\t\t</IKMarkerTask>
+\t\t\t\t\t<IKMarkerTask name="L_heel">
+\t\t\t\t\t\t<apply>true</apply>
+\t\t\t\t\t\t<weight>25</weight>
+\t\t\t\t\t</IKMarkerTask>
+\t\t\t\t\t<IKMarkerTask name="L_instep">
+\t\t\t\t\t\t<apply>true</apply>
+\t\t\t\t\t\t<weight>25</weight>
+\t\t\t\t\t</IKMarkerTask>
+\t\t\t\t\t<IKMarkerTask name="L_5MT">
+\t\t\t\t\t\t<apply>true</apply>
+\t\t\t\t\t\t<weight>25</weight>
+\t\t\t\t\t</IKMarkerTask>
+\t\t\t\t\t<IKMarkerTask name="L_mt2">
+\t\t\t\t\t\t<apply>true</apply>
+\t\t\t\t\t\t<weight>15</weight>
+\t\t\t\t\t</IKMarkerTask>
+\t\t\t\t</objects>
+\t\t\t\t<groups />
+\t\t\t</IKTaskSet>
+\t\t\t<marker_file>weight.trc</marker_file>
+\t\t\t<coordinate_file>Unassigned</coordinate_file>
+\t\t\t<time_range> 5 6 </time_range>
+\t\t\t<output_motion_file>scale_output_SN129.mot</output_motion_file>
+\t\t\t<output_model_file>subject_SN129_scaled.osim</output_model_file>
+\t\t\t<output_marker_file>Unassigned</output_marker_file>
+\t\t\t<max_marker_movement>-1</max_marker_movement>
+\t\t</MarkerPlacer>
+\t</ScaleTool>
+</OpenSimDocument>
